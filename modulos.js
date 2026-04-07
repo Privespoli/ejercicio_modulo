@@ -1,9 +1,10 @@
-// 1. IMPORTS AL PRINCIPIO
+// 1. IMPORTS 
 import { celsiusAFahrenheit } from './util.js';
 import saludar from './saludos.js';
 import { calcularAreaCuadrado, calcularAreaCirculo } from './area_cuadrado.js';
 import { verificarSeguridad } from './password.js';
 import { incrementar, decrementar } from './contador.js';
+import { procesarNombre } from './modal.js'; 
 
 // --- EJERCICIO 1: TEMPERATURA ---
 const tempBoton = document.getElementById('btnConvertir');
@@ -101,4 +102,26 @@ btnMas.addEventListener('click', () => {
 btnMenos.addEventListener('click', () => {
     cuenta = decrementar(cuenta);
     displayContador.textContent = cuenta;
+});
+
+const btnEnviarNom = document.getElementById('btnEnviarNombre');
+const inputNomModal = document.getElementById('inputNombreModal');
+const pantallaDetras = document.getElementById('pantallaPrincipal');
+
+btnEnviarNom.addEventListener('click', () => {
+    const valorInput = inputNomModal.value;
+    
+    // Llamamos a la función con el parámetro capturado
+    const nombreFinal = procesarNombre(valorInput);
+    
+    // Pintamos en la pantalla de atrás
+    pantallaDetras.innerHTML = `
+        <h2 class="text-gradient fw-bold">¡Hola, ${nombreFinal}!</h2>
+        <p class="text-muted m-0">Sesión iniciada correctamente</p>
+    `;
+    
+    // Cerramos el modal usando Bootstrap API
+    const modalElement = document.getElementById('nombreModal');
+    const instance = bootstrap.Modal.getInstance(modalElement);
+    instance.hide();
 });
