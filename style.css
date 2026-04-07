@@ -1,0 +1,108 @@
+:root {
+    --primary-grad: linear-gradient(135deg, #6666ea 0%, #e462b9 100%);
+    --temp-color: #ff9a9e;
+    --saludo-color: #a18cd1;
+    --geo-color: #84fab0;
+    --pass-color: #fccb90;
+    --count-color: #8fd3f4;
+}
+
+body {
+    background-color: #3633313a;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text-gradient {
+    background: var(--primary-grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Estilo Base de las Tarjetas */
+.custom-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid #ccc;
+    height: 100%;
+}
+
+.custom-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* Colores Temáticos por Tarjeta */
+.card-temp { border-top-color: var(--temp-color); }
+.card-saludo { border-top-color: var(--saludo-color); }
+.card-geo { border-top-color: var(--geo-color); }
+.card-pass { border-top-color: var(--pass-color); }
+.card-count { border-top-color: var(--count-color); }
+
+/* Botones Personalizados */
+.btn-custom {
+    background: var(--primary-grad);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: bold;
+    width: 100%;
+    transition: opacity 0.2s;
+}
+
+.btn-custom:hover {
+    color: white;
+    opacity: 0.9;
+}
+
+/* Estilo de los resultados */
+.res-box {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    color: #444;
+}
+
+/* Estilos específicos para el Contador */
+.counter-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-round {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: #eee;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-round:hover { background: #ddd; }
+
+.counter-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    min-width: 50px;
+}
+
+/* Badge de Seguridad */
+.badge-status {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    background-color: #6c757d;
+}
